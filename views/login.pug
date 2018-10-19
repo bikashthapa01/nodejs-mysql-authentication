@@ -1,0 +1,11 @@
+extends layout
+
+block content
+
+    h1 System Login
+    form(action="/login" method="POST")
+        input(type="text" name="username" placeholder="USN" required)
+        input(type="text" name="password" placeholder="Password" required)
+        input(type="submit" value="login")
+    p New Here ? 
+        a(href="/register") Register Now

@@ -1,0 +1,25 @@
+extends layout  
+    
+block content
+    h1 Create New Account
+    p(style="color:red;")=msg
+    
+    if(errors)
+        each error in errors
+            p=error['msg']
+
+    if(success)
+        #login
+            a(href="/login") Login
+
+    form(action="/register/create" method="POST")
+        input(type="text" name="fname" placeholder="First Name" required)
+        input(type="text" name="lname" placeholder="Last Name" required)
+        input(type="text" name="usn" placeholder="USN" required)
+        input(type="email" name="email" placeholder="Email" required)
+        input(type="password" name="password" placeholder="Pasword" required)
+        input(type="password" name="re-password" placeholder="Pasword Again" required)
+        input(type="submit" name="submit")
+
+    p Already Have Account ? 
+        a(href="/login") Login 

@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    h1 XpressLogin
+    p
+        a(href="/") Home
+        if(isAuthenticated)
+            a(href="/dashboard") Profile
+            a(href="/logout") Logout
+        if(!isAuthenticated)
+            a(href="/register") Register
+            a(href="/login") Login
+    block content
+
